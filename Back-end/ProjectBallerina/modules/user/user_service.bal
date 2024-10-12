@@ -9,7 +9,8 @@ configurable string password = ?;
 configurable string databasename = ?;
 configurable int databaseport = ?;
 
-service /user on new http:Listener(9090) {
+
+service /user on new http:Listener(8080) {
 
     // resource function get sayHello(string name) returns string {
     //     // Call the greet function from the my_module module
@@ -21,6 +22,19 @@ service /user on new http:Listener(9090) {
     function init() returns error? {
         // Initialize MySQL connection
         self.dbClient = check new ("localhost", databaseusername , password, databasename, databaseport);
+    }
+
+    resource function get users/[string id]() returns User|http:NotFound|error {
+        // Execute simple query to fetch record with requested id.
+        User|sql:Error result = self.dbClient->queryRow(`SELECT * FROM user WHERE id = ${id}`);
+
+        // Check if record is available or not
+        if result is sql:NoRowsError {
+            return http:NOT_FOUND;
+        } else {
+            return result;
+        }
+
     }
 
     // Resource to create a user
