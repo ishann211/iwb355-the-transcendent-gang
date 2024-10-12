@@ -3,7 +3,7 @@ import ballerinax/mysql;
 import ballerina/sql;
 // import ProjectBallerina.userModule;
 
-service /user on new http:Listener(8081) {
+service /user on new http:Listener(8080) {
 
     // resource function get sayHello(string name) returns string {
     //     // Call the greet function from the my_module module
@@ -14,7 +14,20 @@ service /user on new http:Listener(8081) {
 
     function init() returns error? {
         // Initialize MySQL connection
-        self.dbClient = check new ("localhost", "root", "IThathsara@52k", "ProjectBallerina", 3306);
+        self.dbClient = check new ("localhost", "root", "Dasuni#2001", "test", 3306);
+        
+    }
+
+    resource function get users/[string id]() returns User|http:NotFound|error {
+    // Execute simple query to fetch record with requested id.
+    User|sql:Error result = self.dbClient->queryRow(`SELECT * FROM user WHERE id = ${id}`);
+
+    // Check if record is available or not
+    if result is sql:NoRowsError {
+        return http:NOT_FOUND;
+    } else {
+        return result;
+    }
     }
 
     // Resource to create a user

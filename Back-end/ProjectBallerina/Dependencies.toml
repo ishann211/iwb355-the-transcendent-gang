@@ -336,7 +336,8 @@ dependencies = [
 ]
 modules = [
 	{org = "thath", packageName = "ProjectBallerina", moduleName = "ProjectBallerina"},
-	{org = "thath", packageName = "ProjectBallerina", moduleName = "ProjectBallerina.userModule"},
-	{org = "thath", packageName = "ProjectBallerina", moduleName = "ProjectBallerina.user_service"}
+	{org = "thath", packageName = "ProjectBallerina", moduleName = "ProjectBallerina.db"},
+	{org = "thath", packageName = "ProjectBallerina", moduleName = "ProjectBallerina.http"},
+	{org = "thath", packageName = "ProjectBallerina", moduleName = "ProjectBallerina.user"}
 ]
 
