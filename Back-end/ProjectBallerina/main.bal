@@ -3,17 +3,18 @@ import ballerina/http;
 import ballerinax/mysql;
 import ballerinax/mysql.driver as _;
 
-// import ProjectBallerina.userModule;
+// import ProjectBallerina.user_service;
 
 configurable string password = ?;
-
-
-listener http:Listener userListener = new(8081);
 
 public function main() {
     io:println("Starting User Service...");
     
 }
+
+// Initialize the listener for user service on port 8081, forcing it to bind to IPv4 (127.0.0.1)
+listener http:Listener userListener = new(8081, config = {host: "127.0.0.1"});
+
 
 function initDatabase(mysql:Client dbClient) returns error? {
     _ = check dbClient->execute(`CREATE TABLE IF NOT EXISTS users (ID INT AUTO_INCREMENT PRIMARY KEY, NAME VARCHAR(255), EMAIL VARCHAR(255), USERNAME VARCHAR(255), PASSWORD VARCHAR(255), ROLE VARCHAR(255))`);
