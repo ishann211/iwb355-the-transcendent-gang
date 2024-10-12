@@ -1,3 +1,3 @@
 # Getting Started
-navigate to project
-run project- bal run
+1. Navigate to project<br>
+2. Run the project using 'bal run' command
