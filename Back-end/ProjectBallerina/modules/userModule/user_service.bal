@@ -3,7 +3,13 @@ import ballerinax/mysql;
 import ballerina/sql;
 // import ProjectBallerina.userModule;
 
-service /user on new http:Listener(8081) {
+
+configurable string databaseusername = ?;
+configurable string password = ?;
+configurable string databasename = ?;
+configurable int databaseport = ?;
+
+service /user on new http:Listener(9090) {
 
     // resource function get sayHello(string name) returns string {
     //     // Call the greet function from the my_module module
@@ -14,7 +20,7 @@ service /user on new http:Listener(8081) {
 
     function init() returns error? {
         // Initialize MySQL connection
-        self.dbClient = check new ("localhost", "root", "IThathsara@52k", "ProjectBallerina", 3306);
+        self.dbClient = check new ("localhost", databaseusername , password, databasename, databaseport);
     }
 
     // Resource to create a user
