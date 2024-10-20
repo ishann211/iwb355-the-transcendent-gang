@@ -5,7 +5,6 @@ import ballerinax/mysql.driver as _;
 
 import ballerina/sql;
 
-
 // Configurable values for database setup
 configurable string databaseusername = ?;
 configurable string password = ?;
@@ -21,6 +20,7 @@ public function main() {
 // listener http:Listener userListener = new(8080, config = {host: "127.0.0.1"});
 
 
+
 // Function to initialize the database Tables
 function initDatabase(mysql:Client dbClient) returns error? {
     _ = check dbClient->execute(`CREATE TABLE IF NOT EXISTS users (ID INT AUTO_INCREMENT PRIMARY KEY, NAME VARCHAR(255), EMAIL VARCHAR(255), USERNAME VARCHAR(255), PASSWORD VARCHAR(255), ROLE VARCHAR(255))`);
@@ -33,11 +33,11 @@ mysql:Client myClient = check new ("localhost", databaseusername, password, data
 // Service to handle operations
 service /api on new http:Listener(9090) {
 
-    //private final mysql:Client dbClient;
 
     function init() returns error? {
         // self.dbClient = check new ("localhost", "root", password, "test", 3306);
         check initDatabase(myClient);
+
     }
 
     // Resource to get a user by id
@@ -60,6 +60,5 @@ service /api on new http:Listener(9090) {
 
         return http:CREATED;
     }
-
-    
 }
+
