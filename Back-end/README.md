@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 
 Our healthcare patient management application allows patients to register and book their appointments with doctors. The application is built using Next.js for the frontend and Ballerina for the backend. Here’s a detailed breakdown:
