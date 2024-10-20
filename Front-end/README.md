@@ -57,14 +57,21 @@ npm install
 API and Database Configuration
 
 NEXT_PUBLIC_ENDPOINT=https://your-api-endpoint
+
 PROJECT_ID=your_project_id
+
 API_KEY=your_api_key
+
 DATABASE_ID=your_database_id
+
 PATIENT_COLLECTION_ID=your_patient_collection_id
+
 APPOINTMENT_COLLECTION_ID=your_appointment_collection_id
+
 NEXT_PUBLIC_BUCKET_ID=your_bucket_id
 
 Admin Passkey
+
 NEXT_PUBLIC_ADMIN_PASSKEY=111111
 
 
