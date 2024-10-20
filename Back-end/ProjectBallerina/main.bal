@@ -38,6 +38,18 @@ type NewUser record {|
     string role;
 |};
 
+
+type Appoinment record {|
+    readonly int appoinmentId;
+    string patientId;
+    string doctorId;
+    string appoinmentDate;
+    string reasonsForAppoinment;
+    string additionalNotes;
+    string cancellationReason;
+    string status;
+|};
+
 service /api on new http:Listener(9090) {
 
     resource function get users/[int id]() returns User|http:NotFound|error {
@@ -61,7 +73,6 @@ service /api on new http:Listener(9090) {
 
         return http:CREATED;
     }
-
     
 }
 
