@@ -1,4 +1,4 @@
-## iwb355-the-transcendent-gang
+# iwb355-the-transcendent-gang
 
 This healthcare patient management application allows patients to register, book, and manage their appointments with doctors. The application is built using Next.js for the frontend and Ballerina for the backend. Here’s a detailed breakdown:
 
