@@ -30,6 +30,19 @@ function initDatabase(mysql:Client dbClient) returns error? {
 mysql:Client myClient = check new ("localhost", databaseusername, password, databasename, databaseport);
 
 
+
+
+type Appoinment record {|
+    readonly int appointmentId;
+    string patientId;
+    string doctorId;
+    string appointmentDate;
+    string reasonsForAppoinment;
+    string additionalNotes;
+    string cancellationReason;
+    string status;
+|};
+
 // Service to handle operations
 service /api on new http:Listener(9090) {
 
