@@ -40,10 +40,10 @@ type NewUser record {|
 
 
 type Appoinment record {|
-    readonly int appoinmentId;
+    readonly int appointmentId;
     string patientId;
     string doctorId;
-    string appoinmentDate;
+    string appointmentDate;
     string reasonsForAppoinment;
     string additionalNotes;
     string cancellationReason;
