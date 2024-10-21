@@ -18,13 +18,14 @@ const Success =async  ({params:{userId},searchParams}:SearchParamProps) => {
         <div className="flex h-screen max-h-screen px-[5%]">
            <div className='success-img'>
                 <Link href='/'>
-                    <Image
-                        src="/assets/icons/logo-full.svg" 
-                        alt="logo"
-                        width={1000} // replace with your desired width
-                        height={1000} // replace with your desired height
-                        className='h-10 w-fit'
-                    />
+                <Image
+                    src="/assets/images/logo-full.png"
+                    alt="patient"
+                    width={1000}
+                    height={1000}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="mb-2 h-21 w-fit "
+                />
                 </Link>
 
                 <section className="flex flex-col items-center">
@@ -73,7 +74,7 @@ const Success =async  ({params:{userId},searchParams}:SearchParamProps) => {
                     <Link href={`/patients/${userId}/new-appointment`}>New appointment</Link>
                 </Button>
                 
-                <p className='copyright'> © 2024 CarePulse</p>
+                <p className='copyright'> © 2024 BookMyDoctor</p>
 
            </div>
         </div>

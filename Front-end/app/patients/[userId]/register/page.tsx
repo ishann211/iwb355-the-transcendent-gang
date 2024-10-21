@@ -15,24 +15,25 @@ const Register = async ({params:{userId}}:SearchParamProps) => {
         <div className="sub-container max-w-[860px] flex-1 flex-col py-10">
 
           <Image
-            src="/assets/icons/logo-full.svg"
+            src="/assets/images/logo-full.png"
             alt="patient"
             width={1000}
             height={1000}
-            className="mb-12 h-12 w-fit"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="mb-2 h-21 w-fit align-middle"
           />
 
           <RegisterForm user={user} />
           
             <p className="copyright py-12">
-            © 2024 CarePulse
+            © 2024 BookMyDoctor
             </p>
 
         </div>
       </section>
 
       <Image
-        src="/assets/images/register-img.png"
+        src="/assets/images/register-img.jpg"
         alt="patient"
         width={1000}
         height={1000}

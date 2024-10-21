@@ -11,31 +11,33 @@ export default function Home() {
 
         <div className="sub-container max-w-[496px]">
 
-          <Image
-            src="/assets/icons/logo-full.svg"
+          {/* <Image
+            src="/assets/images/logo-full.png"
             alt="patient"
             width={1000}
             height={1000}
-            className="mb-12 h-12 w-fit"
-          />
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="mb-2 h-21 w-fit align-middle"
+          /> */}
 
           <PatientForm />
           <div className="text-14-regular mt-20 flex justify-between">
 
             <p className="justify-items-end text-dark-600 xl:text-left">
-            © 2024 CarePulse
+            © 2024 BookMyDoctor
             </p>
 
-            <Link href="/?admin=true" className="text-green-500">
+            {/* <Link href="/?admin=true" className="text-green-500">
               Admin
-            </Link>
+            </Link> */}
+
 
           </div>
         </div>
       </section>
 
       <Image
-        src="/assets/images/onboarding-img.png"
+        src="/assets/images/onboarding-img.jpg"
         alt="patient"
         width={1000}
         height={1000}
